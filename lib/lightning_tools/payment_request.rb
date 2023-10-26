@@ -1,9 +1,7 @@
 require "http"
 require "json"
-require "money"
-require "bitcoin_rate"
 
-class LightningTools
+module LightningTools
   class PaymentRequest
     class PaymentRequestError < StandardError
     end
@@ -19,17 +17,8 @@ class LightningTools
     def initialize(pr)
       self.payment_request = pr.downcase
     end
-    
-    def amount_in_fiat(currency = "usd")
-      amount = invoice_data["amount"]
-      LightningTools::BitcoinRate.new(currency).fiat_value_for(amount)
-    end
 
     def amount
-      Money.new(amount_raw, "SATS")
-    end
-
-    def amount_raw
       invoice_data["amount"]
     end
 

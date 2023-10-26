@@ -1,6 +1,4 @@
-require "payment_request"
-
-class LightningTools
+module LightningTools
   class Invoice
     attr_accessor :payment_request, :preimage, :verify
 

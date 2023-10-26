@@ -1,9 +1,9 @@
-require "http"
-require "json"
-require "lnurl_pay"
 # frozen_string_literal: true
 
-class LightningTools
+require "http"
+require "json"
+
+module LightningTools
   class LightningAddress < LnurlPay
     class KeysendError < StandardError
     end

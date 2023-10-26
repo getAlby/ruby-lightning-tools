@@ -1,12 +1,9 @@
-require "http"
-require "json"
-require "lightning_address"
-require "lnurl"
-require "money"
-
 # frozen_string_literal: true
 
-class LightningTools
+require "http"
+require "json"
+
+module LightningTools
   class LnurlPay
     class LnurlPayError < StandardError
     end
@@ -125,19 +122,11 @@ class LightningTools
       @lnurlp_data ||= fetch_lnurlp_data!
     end
 
-    def max_sendable
-      Money.new(max / 1000, "SATS")
-    end
-
     def min_sendable
-      Money.new(min / 1000, "SATS")
-    end
-
-    def min
       lnurlp_data[:min].to_i
     end
 
-    def max
+    def max_sendable
       lnurlp_data[:max].to_i
     end
 
@@ -203,7 +192,7 @@ class LightningTools
     end
 
     def valid_amount?(amount)
-      amount > 0 && amount >= min && amount <= max
+      amount > 0 && amount >= min_sendable && amount <= max_sendable
     end
   end
 end

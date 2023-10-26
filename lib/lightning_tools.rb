@@ -1,6 +1,9 @@
-require "bitcoin_rate"
-require "invoice"
-require "lightning_address"
-require "lnurl_pay"
-require "lnurl"
-require "payment_request"
+module LightningTools
+  VERSION = '1.0.0'.freeze
+
+  autoload :Invoice, 'lightning_tools/invoice'
+  autoload :LightningAddress, 'lightning_tools/lightning_address'
+  autoload :LnurlPay, 'lightning_tools/lnurl_pay'
+  autoload :Lnurl, 'lightning_tools/lnurl'
+  autoload :PaymentRequest, 'lightning_tools/payment_request'
+end

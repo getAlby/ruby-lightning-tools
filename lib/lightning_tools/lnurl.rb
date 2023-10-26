@@ -3,7 +3,7 @@ require 'http'
 require 'json'
 require 'ostruct'
 
-class LightningTools
+module LightningTools
   class Lnurl
     InvoiceResponse = Class.new(OpenStruct)
     LnurlResponse = Class.new(OpenStruct) do

@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "lightning-tools"
-  spec.version       = "0.1.0"
+  spec.version       = LightningTools::VERSION
   spec.authors       = ["Alby Contributors"]
   spec.email         = ["hello@getalby.com"]
 
@@ -18,6 +18,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'json', '~> 2.6'
   spec.add_runtime_dependency 'http', '~> 5.1'
   spec.add_runtime_dependency 'bech32', '~> 1.1'
-  spec.add_runtime_dependency 'money', '~> 6.16'
   spec.add_runtime_dependency 'redis', '~> 5.0'
 end
