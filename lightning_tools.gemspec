@@ -1,4 +1,4 @@
-require_relative 'lib/lightning_tools'
+require_relative 'lib/lightning_tools/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "lightning-tools"

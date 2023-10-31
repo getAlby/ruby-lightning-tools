@@ -1,6 +1,4 @@
 module LightningTools
-  VERSION = '1.0.0'.freeze
-
   autoload :Invoice, 'lightning_tools/invoice'
   autoload :LightningAddress, 'lightning_tools/lightning_address'
   autoload :LnurlPay, 'lightning_tools/lnurl_pay'
