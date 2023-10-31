@@ -21,7 +21,7 @@ module LightningTools
     end
 
     def self.valid?(value)
-      return Lnurl.valid?(value)
+      return LightningTools::Lnurl.valid?(value)
     end
 
     def initialize(lnurlp_str)
@@ -161,9 +161,9 @@ module LightningTools
 
       invoice = generate_invoice(invoice_params)
       # validate payment request
-      if invoice.payment_request.amount_raw != args[:satoshi]
+      if invoice.payment_request.amount != args[:satoshi]
         raise LnurlPayError,
-              "Payment request: invalid amount (#{invoice.payment_request.amount_raw} != #{args[:satoshi]}"
+              "Payment request: invalid amount (#{invoice.payment_request.amount} != #{args[:satoshi]}"
       end
       invoice
     end
@@ -188,7 +188,7 @@ module LightningTools
     end
 
     def lnurlp_url
-      @lnurlp_url ||= Lnurl.decode_raw(@lnurlp_str.to_s)
+      @lnurlp_url ||= LightningTools::Lnurl.decode_raw(@lnurlp_str.to_s)
     end
 
     def valid_amount?(amount)
