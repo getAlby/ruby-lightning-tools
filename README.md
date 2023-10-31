@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="100%" src="docs/Header.png">
+</p>
+
 # Lightning Tools for Ruby
 
 A ruby gem that provides useful and common tools and helpers to build lightning web applications.
