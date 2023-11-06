@@ -238,9 +238,10 @@ puts invoice.payment_request.amount
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/bumi/lnurl-ruby.
+Bug reports and pull requests are welcome on GitHub at [https://github.com/bumi/lnurl-ruby](https://github.com/getAlby/ruby-lightning-tools).
 
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
